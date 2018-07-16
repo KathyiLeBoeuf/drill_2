@@ -1,28 +1,30 @@
+'use strict';
+
 function daysOfMonths(month, leapYear){
-    switch(month) {
-        case 'January' :
-        case 'March' :
-        case 'May' :
-        case 'July' :
-        case 'August' :
-        case 'October' :
-        case 'December' :
-            return `${month} has 31 days.`
-        case 'February' :
-            switch(leapYear) {
-                case true :
-                    return `${month} has 29 days.`
-                default :
-                    return `${month} has 28 days.`
-            }
-        case 'April' :
-        case 'June' :
-        case 'September' :
-        case 'November' :
-            return `${month} has 30 days.`
-        default :
-            return 'Must provide a valid month.'
-    }
+	switch(month) {
+	case 'January' :
+	case 'March' :
+	case 'May' :
+	case 'July' :
+	case 'August' :
+	case 'October' :
+	case 'December' :
+		return `${month} has 31 days.`;
+	case 'February' :
+		switch(leapYear) {
+		case true :
+			return `${month} has 29 days.`;
+		default :
+			return `${month} has 28 days.`;
+		}
+	case 'April' :
+	case 'June' :
+	case 'September' :
+	case 'November' :
+		return `${month} has 30 days.`;
+	default :
+		return 'Must provide a valid month.';
+	}
 }
 
 console.log(daysOfMonths('January'));
@@ -35,8 +37,36 @@ console.log(daysOfMonths('Kathy'));
 
 
 function rockPaperScissors(num) {
-    let computer = Math.floor(Math.random() * 3) + 1;
-
+	let computer = Math.floor(Math.random() * 3) + 1;
+	if (computer === 1 && num === 1) {
+		return 'It\'s a tie.';
+	}
+	if (computer === 1 && num === 2) {
+		return 'Paper beats rock.';
+	}
+	if (computer === 1 && num === 3) {
+		return 'Rock beats scissors.';
+	}
+	if (computer === 2 && num === 1) {
+		return 'Paper beats rock.';
+	}
+	if (computer === 2 && num === 2) {
+		return 'It\'s a tie.';
+	}
+	if (computer === 2 && num === 3) {
+		return 'Scissors beats paper.';
+	} 
+	if (computer === 3 && num === 1) {
+		return 'Rock beats scissors.';
+	}
+	if (computer === 3 && num === 2) {
+		return 'Scissors beats paper';
+	}
+	if (computer === 3 && num === 3) {
+		return 'It\'s a tie.';
+	} 
+}
+/*
     if (computer ===  num) {
         return "It's a tie"
     } if (computer === 1 && num !== 2) {
@@ -53,6 +83,7 @@ function rockPaperScissors(num) {
         return "Computer Scisors beats Paper"
 }
 ;
+*/
 console.log(rockPaperScissors(3));
 console.log(rockPaperScissors(3));
 console.log(rockPaperScissors(3));
